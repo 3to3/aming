@@ -1,0 +1,423 @@
+@charset "UTF-8";
+
+/* ハンバーガーメニューボタンの基本設定 */
+.btn-hamburger,
+.btn-ham-mp {
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    z-index: 999;
+}
+
+/* ここからトップページ用 */
+.btn-hamburger {
+    width: 70px;
+    height: 60px;
+    background: #fdfbf5;
+    opacity: 0.9;
+    border: 1px solid #8a5b58;
+    border-radius: 10px;
+}
+
+/* ハンバーガーの＝これ */
+.btn-hamburger span {
+    display: inline-block;
+    width: 50%;
+    height: 6px;
+    left: 25%;
+    background-color: #8a5b58;
+    border-radius: 3px;
+    position: absolute;
+    transition: transform .5s, opacity .5s;
+}
+
+.btn-hamburger span:nth-child(1) {
+    top: 10px;
+}
+
+.btn-hamburger span:nth-child(2) {
+    bottom: 30px;
+}
+
+/* spanのあとにメニューを入れる疑似要素 */
+.btn-hamburger::after {
+    position: absolute;
+    left: 0;
+    top: 35px;
+    content: 'メニュー';
+    display: block;
+    width: 100%;
+    color: #8a5b58;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: all .4s;
+}
+
+/* クリックしたら✕になる */
+.btn-hamburger.show span:nth-child(1) {
+    -webkit-transform: translateY(6px) rotate(-45deg);
+    transform: translateY(6px) rotate(-45deg);
+}
+
+.btn-hamburger.show span:nth-child(2) {
+    -webkit-transform: translateY(-6px) rotate(45deg);
+    transform: translateY(-6px) rotate(45deg);
+}
+
+/* ✕の下にとじる */
+.btn-hamburger.show::after {
+    content: "とじる";
+    top: 35px;
+}
+
+/* アコーディオンメニュータイトル */
+.accordion-title {
+    position: relative;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* ハンバーガーメニュー */
+/* ぬるっと出てくる */
+.ham-menu {
+    position: fixed;
+    top: 71px;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    padding: 80px 20px 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s;
+    z-index: 199;
+    background: #fdfbf5;
+    color: #8a5b58;
+    overflow: auto;
+}
+
+/* クリックしたらメニューが出てくる */
+.ham-menu.show {
+    opacity: 0.9;
+    visibility: visible;
+}
+
+/* モバイル用アコーディオンメニュー */
+.accordion-container {
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    text-align: left;
+    padding: 0 20px;
+}
+
+/* メニュー間のmargin-bottom */
+.ham-menu > ul li {
+    margin-bottom: 20px;
+}
+
+/* hoverしたときにラインが出てくる */
+.ham-menu a::after {
+    display: block;
+    border-bottom: dotted 3px #d06f56;
+    bottom: 0;
+    content: "";
+    transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    width: 0;
+}
+
+/* hoverしたときのライン幅100％ */
+.ham-menu a:hover::after {
+    width: 100%;
+}
+
+/* クリックする前は＋アイコン */
+.accordion-title::before {
+    content: "";
+    position: absolute;
+    top: 45%;
+    right: 1%;
+    width: 15px;
+    height: 3px;
+    transform: rotate(90deg);
+    background: #8a5b58;
+    transition: all .3s ease-in-out;
+}
+
+/* クリックしたら－アイコン */
+.accordion-title::after {
+    content: "";
+    position: absolute;
+    top: 45%;
+    right: 1%;
+    width: 15px;
+    height: 3px;
+    background: #8a5b58;
+    transition: all .2s ease-in-out;
+}
+
+/* ＋の1本が回転して－になる */
+.accordion-title.open::before {
+    transform: rotate(180deg);
+}
+
+/* アコーディオンメニューを開いたら透明にする */
+.accordion-title.open::after {
+    opacity: 0;
+}
+
+/* モバイル用アコーディオンメニュー中身 */
+.accordion-content {
+    padding: 16px 20px 0;
+    margin-bottom: 16px;
+    font-size: 16px;
+    border: 1px solid #8a5b58;
+    background: #fdfbf5;
+}
+
+/* アイコン */
+.accordion-container img {
+    width: 24px;
+    height: 24px;
+    margin: 3px;
+    vertical-align: middle;
+}
+
+/* PC用アコーディオンメニュー */
+.accordion-container--pc {
+    justify-content: space-between;
+    width:100%;
+}
+
+/* 常に表示されるところ */
+.accordion-container--pc > li {
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    width: 20%;
+    height: 110px;
+    background: #8a5b58;
+    color: #fdfbf5;
+    font-size: 18px;
+    border-radius: 0 0 100px 100px;
+}
+
+/* a範囲広げる */
+.accordion-container--pc > li a {
+    display: block;
+    padding: 30px 0 50px;
+    border-radius: inherit;
+    color: inherit;
+}
+
+/* hoverでカーソル・背景色変更 */
+.accordion-container--pc > li:hover {
+    cursor: pointer;
+    background: #d06f56;
+}
+
+/* PC用アコーディオンメニュータイトル */
+.accordion-title--pc {
+    position: relative;
+    padding: 30px 0 50px;
+    border-radius: inherit;
+}
+
+/* PC用アコーディオンメニュー中身 */
+.accordion-content--pc {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 40%;
+    width: 20%;
+    padding: 134px 0 36px;
+    background: #f4e7c7;
+    border-radius: 0 0 36px 36px;
+    border: 1px solid #8a5b58;
+    border-top: none;
+    z-index: -1;
+}
+
+/* aタグの範囲広げる */
+.accordion-content--pc ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-align: left;
+    font-size: 18px;
+}
+
+/* liをhoverしたら色が変わる */
+.accordion-content--pc ul li a:hover {
+    background: #d06f56;
+    color: #fdfbf5;
+}
+
+/* デバイス幅767px以上のときはフォントサイズ変更*/
+@media (min-width:767px) {
+    .accordion-container--pc > li {
+        font-size: 20px;
+    }
+}
+
+/* ジャンルのアコーディオンメニュー中身 */
+.accordion-content--g {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    max-width: 100%;
+    padding: 134px 20px 36px;
+    background: #f4e7c7;
+    border-radius: 0 0 36px 36px;
+    border: 1px solid #8a5b58;
+    border-top: none;
+    z-index: -1;
+}
+/* トップページ用おわり */
+
+/* ここからマイページ用 */
+/* マイページ用ハンバーガーメニュー */
+.btn-ham-mp {
+    position: relative;
+    display: block;
+    width: 92px;
+    height: 48px;
+    padding: 8px 5px;
+    color: #fdfbf5;
+    border: 1px solid #fdfbf5;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.mp-menu--mb,
+.mp-menu--pc {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    top: 80px;
+    right: 0;
+    padding: 0;
+    z-index: 199;
+    background: #dcaf6e;
+    text-align: left;
+}
+
+.mp-menu--mb {
+    top: 0;
+    right: -100%;
+    visibility: hidden;
+    padding-top: 75px;
+    transition: .7s;
+}
+
+/* クリックしたらメニューが出てくる */
+.mp-menu--mb.show {
+    visibility: visible;
+    right: 0;
+}
+
+/* マイページ用メニュー中身 */
+.mp-menu--mb ul li a,
+.mp-menu--pc ul li a {
+    display: block;
+    padding: 16px;
+    color: #fdfbf5;
+}
+
+.mp-menu--mb.show ul li a:active, 
+.mp-menu--pc ul li a:hover {
+    display: block;
+    background: #f4e7c7;
+    color: #8a5b58;
+}
+
+.to-mp {
+    flex-direction: column;
+    margin-left: 10px;
+    color: #fdfbf5;
+}
+
+.to-mp span {
+    font-size: 12px;
+}
+
+/* デバイス幅640px以上のとき発動*/
+@media (min-width:640px) {
+.container {
+    display: flex;
+    width: 100%;
+    padding-top: 79px;
+    align-items: stretch;
+}
+
+.mp-pc {
+    display: block;
+    width: calc(100% - 250px);
+    height: 100%;
+}
+
+.mp-menu--pc {
+    position: relative;
+    top: 0;
+    height: auto;
+    background: #dcaf6e;
+}
+
+}
+
+/* TOPへ戻るボタン */
+#btn-top{
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background: #d06f56;
+    opacity: 0.6;
+    border-radius: 50%;
+}
+#btn-top a{
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+}
+#btn-top a::before{
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 800;
+    content: '\f062';
+    font-size: 25px;
+    color: #fdfbf5;
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%,-50%);
+}
+#btn-top a::after{
+    content: "トップ";
+    font-size: 12px;
+    font-weight: 600;
+    color: #fdfbf5;
+    position: absolute;
+    top: 35px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+}
+
+
+/*  モバイル用 */
+/* デバイス幅640px以上のときは表示しない */
+@media (min-width: 640px){
+.mb {display: none;}
+}
+
+/* PC用 */
+/* 通常時は非表示 */
+.pc {display: none;}
+/* デバイス幅640px以上のときに表示する */
+@media (min-width: 640px){
+.pc {display: block;}
+}

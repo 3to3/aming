@@ -1,0 +1,373 @@
+@charset "UTF-8";
+
+/* 投稿フォーム */
+.sakuhin-form {
+    max-width: 100%;
+    padding: 15px;
+    background: #fdfbf5;
+    border: 1px solid #8a5b58;
+    text-align: left;
+}
+
+/* h3設定 */
+.sakuhin-form h3 {
+    padding: 10px 0;
+    font-size: 18px;
+}
+
+/* p設定 */
+.sakuhin-form p {
+    font: 16px;
+    padding: 10px;
+}
+
+/* span設定 */
+.sakuhin-form span {
+    font-size: 14px;
+}
+
+/* ここから作品写真 */
+.img-upload-wrapper {
+    box-sizing: border-box;
+    position: relative;
+    max-width: 100%;
+    height: 250px;
+}
+
+/* preview-areaとdrop-area設定 */
+#preview-area,
+#drop-area {
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fdfbf5;
+    border: 2px dashed #8a5b58;
+    color: #8a5b58;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+
+/* 画像プレビューする */
+#preview-img {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%,0);
+}
+
+/* 画像のプレビューサイズ */
+.resize-img{
+    width: 180px;
+    height: 180px;
+}
+
+/* hoverでdrop-areaの背景色変更 */
+#drop-area:hover {
+    background: #f4e7c7;
+}
+
+/* アイコン */
+#drop-area::before {
+    content: "\f03e";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-family: "Font Awesome 5 Free";
+    color: #8a5b58;
+    font-size: 600%;
+}
+
+/* テキスト */
+.drop-text {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%,0);
+    z-index: 300;
+}
+
+/* クリアボタン */
+.btn-clear {
+    display: none;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(120px,-100px);
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 244;
+}
+
+/* もともとのinput type="file" */
+#input-img {
+    width: 100%;
+    height: 250px;
+    opacity: 0;
+}
+
+#input-img:focus {
+    opacity: 1;
+}
+
+/* テキスト入力エリアのスタイル */
+.sakuhin-form input[type="text"],
+.sakuhin-form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border-radius: 8px;
+    background: #fdfbf5;
+    color: #8a5b58;
+    border: 1px solid #8a5b58;
+    font-size: 14px;
+}
+
+/* focusしたときのスタイル */
+.sakuhin-form input[type="text"]:focus,
+.sakuhin-form textarea:focus,
+.select-genre:focus {
+    outline: none;
+    background: #f4e7c7;
+    border: 2px solid #d06f56;
+    font-weight: bold
+}
+
+/* ラジオボタン */
+.radio {
+    padding: 5px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + label {
+    background: #d06f56;
+    border: 1px solid #d06f56;
+    color: #fdfbf5;
+}
+.radio--label {
+    display: block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 5px;
+    margin-right: 10px;
+    background: #fdfbf5;
+    border: 1px solid #8a5b58;
+    border-radius: 10px;
+    color: #8a5b58;
+    text-align: center;
+    cursor: pointer;
+}
+
+.radio--label:last-of-type {
+    margin-right: 0;
+}
+
+.radio--label:hover{
+    background: #f4e7c7;
+    border: 1px solid #d06f56;
+    color: #8a5b58;
+}
+
+/* ジャンル選択 */
+/* セレクトボックスのスタイル設定 */
+.select-genre {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background: #fdfbf5;
+    border-radius: 5px;
+    border: 1px solid #8a5b58;
+    z-index: 1;
+    color: #8a5b58;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* 初心者むけチェック */
+/* チェックボックスのスタイル設定 */
+.check-beginner {
+    width: 50%;
+    margin-right: 10px;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* ラベルの書式 */
+.check-beginner label {
+    font-size: 16px;
+	cursor: pointer;
+}
+
+/* チェックボックスの設定 */
+.check-beginner .btn-check {
+	position: relative;
+	cursor: pointer;
+}
+
+/* ☑の設定 */
+.check-beginner .btn-check:before {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 2px;
+	width: 12px;
+	height: 4px;
+	content: '';
+	-webkit-transition: -webkit-transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+    transition:         transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
+	-webkit-transform: rotate(-45deg) scale(0, 0);
+    transform: rotate(-45deg) scale(0, 0);
+	border: 3px solid #d06f56;
+	border-top-style: none;
+	border-right-style: none;
+}
+.check-beginner .btn-check:checked:before {
+	-webkit-transform: rotate(-45deg) scale(1, 1);
+    transform: rotate(-45deg) scale(1, 1);
+}
+.check-beginner .btn-check:after {
+	position: absolute;
+	top: -4px;
+	left: 0;
+	width: 16px;
+	height: 16px;
+	content: '';
+	cursor: pointer;
+	border: 2px solid #8a5b58;
+	background:#fdfbf5;
+}
+
+/* 公開設定 */
+.btn-switch {
+    box-sizing: border-box;
+    position: relative;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* チェックボックス隠す */
+.checkbox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+}
+
+/* knobのz-indexを2にする */
+.knobs {
+    z-index: 2;
+}
+
+/* 動かしたときの設定 */
+.onoff .layer {
+    width: 100%;
+    background: #fdfbf5;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+/* スイッチ切り替え */
+.onoff .knobs:before, .onoff .knobs:after, .onoff .knobs span {
+    position: absolute;
+    top: 2px;
+    width: 50%;
+    height: 40px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1;
+    padding: 9px 0;
+    transition: 0.3s ease all;
+}
+
+/* 枠線つける */
+.onoff {
+    border:1px solid #8a5b58;
+}
+
+/* knobが公開するになっているときの設定 */
+.onoff .knobs:before {
+    content: '';
+    top:0;
+    left: 0;
+    background: #d06f56;
+}
+
+/* knobを公開しないにしたときの設定 */
+.onoff .knobs:after {
+    content: '公開しない';
+    right: 0;
+    color:#fdfbf5;
+}
+
+/* 公開する・公開しない */
+.onoff .knobs span {
+    display: inline-block;
+    left: 0;
+    color:#fdfbf5;
+    z-index: 1;
+}
+.onoff .checkbox:checked + .knobs span {
+    color:#fdfbf5;
+}
+.onoff .checkbox:checked + .knobs:before {
+    left: 50%;
+    background: #8a5b58;
+}
+.onoff .checkbox:checked + .knobs:after {
+    color: #fdfbf5;
+}
+.onoff .checkbox:checked ~ .layer {
+    background: #fdfbf5;
+}
+
+/* 投稿ボタン */
+.btn-form {
+    text-align: center;
+    padding: 20px 0 11px 0;
+}
+
+.btn-form input {
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    line-height: 30px;
+    background: #fdfbf5;
+    border: 1px solid #d06f56;
+    color: #d06f56;
+    font-size: 14px;
+    -webkit-appearance: none;
+}
+
+/* デバイス幅400px以上でボタンのスタイル一部変更 */
+@media(min-width:400px){
+    .btn-form input {
+        width: 70%;
+        font-size: 16px;
+    }
+}
+
+.btn-form input:hover {
+    background: #d06f56;
+    border: 1px solid #d06f56;
+    color: #fdfbf5;
+}
+
+.btn-form input:focus {
+    outline: none;
+}

@@ -1,0 +1,387 @@
+@charset "UTF-8";
+
+/* bodyにbox-sizingと斜めチェック背景設定 */
+body {
+    box-sizing: border-box;
+    background: repeating-linear-gradient(45deg,rgba(138 91 88 / .2)0px 30px,rgba(138 91 88 / 0)20px 60px),
+    repeating-linear-gradient(135deg,rgba(138 91 88 / .2)0px 30px,rgba(138 91 88 / 0)20px 60px)#f4e7c7;
+}
+
+/* img共通設定 */
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+
+/* a共通設定 */
+a {
+    color: #8a5b58;
+}
+
+/* hover設定 */
+.hover a:hover {
+    color:#d06f56;
+}
+
+/* 全体枠の設定 */
+.wrap {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #fdfbf5;
+    color: #8a5b58;
+    border: 1px solid #8a5b58;
+    font-family: 'Kosugi Maru', sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* コンテンツ枠の設定 */
+.contents {
+    padding:36px 20px;
+}
+
+/* 背景色変更*/
+.genmai {
+    background: #f4e7c7;
+}
+
+/* 各コンテンツ見出し */
+.heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    font-size:20px;
+    color:#8a5b58;
+}
+
+/* 見出しの装飾 */
+.heading::before,
+.heading::after{
+    content:"";
+    border-bottom: 6px dotted #d06f56;
+}
+
+.heading::before{
+    margin-right: 10px;
+    padding-left: 30px;
+}
+
+.heading::after{
+    margin-left: 10px;
+    padding-right: 30px;
+}
+
+/* ＼こういう見出し／ */
+.check{
+    margin: 30px auto 10px;
+    color: #8a5b58;
+    font-size:14px;
+}
+
+.check::before {
+    content:"＼";
+    color:#d06f56;
+}
+
+.check::after {
+    content:"／";
+    color:#d06f56;
+}
+
+/* ボタンのスタイル */
+a.btn {
+    display: inline-block;
+    width:200px;
+    height:40px;
+    line-height: 40px;
+    margin:0 auto;
+    padding:0 16px;
+    background:#d06f56;
+    border-radius:20px;
+    box-shadow: 0 4px #8a5b58;
+    color: #fdfbf5;
+}
+
+/* ボタンhover */
+a.btn:hover {
+    box-shadow: none;
+    position: relative;
+    top: 4px;
+}
+
+/* ヘッダーメニュー固定 */
+.header-inner {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    z-index: 3000;
+}
+
+/* ロゴ画像とログイン・新規登録のリンク */
+.header-logo-link {
+    max-width: 100％;
+    justify-content: space-between;
+    background: #8a5b58;
+    color: #fdfbf5;
+    padding: 10px 20px;
+}
+
+/* ロゴ画像 */
+.header-logo-link img { 
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    padding: 10px 0;
+}
+
+/* デバイス幅640px以上のときに画像サイズを変更 */
+@media screen and (min-width:640px) {
+    .header-logo-link img {
+        width: 200px;
+        height: 60px;
+        padding: 0;
+        vertical-align: middle;
+    }
+}
+
+/* ログインと新規登録のリンク色変更 */
+.header-link a {
+    color: #fdfbf5;
+}
+
+/* ログインと新規登録の間に装飾 */
+.header-link {
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header-link li + li {
+    margin-left: 14px;
+    padding-left: 14px;
+    border-left: 1px solid #fdfbf5;
+}
+
+/* 検索ボックスとハンバーガーメニュー */
+.header-search-nav {
+    max-width: 100％;
+    justify-content: space-between;
+    background: rgba(253, 251, 245, 0);
+    color: #8a5b58;
+    padding: 5px 20px;
+}
+
+/* 検索ボックス */
+.search-box{
+    box-sizing: border-box;
+    position: relative;
+    margin: 10px 0;
+    padding: 0px 30px;
+    border-radius: 20px;
+    height: 40px;
+    width: 250px;
+    overflow: hidden;
+}
+
+/* キーワード入力フォーム */
+.search-box input[type="search"] {
+    width: 100%;
+    height: 100%; 
+    position:absolute; 
+    left:0;
+    top:0; 
+    padding: 0 30px;
+    border-radius:inherit;
+    outline:0;
+    background:#fdfbf5;
+    opacity: 0.9;
+    border: 1px solid #8a5b58;
+    z-index: 7;
+}
+
+.search-box input[type="submit"]{
+    cursor: pointer;
+    font-family: "Font Awesome 5 Free";
+    font-size: 20px;
+    border: none;
+    background: none;
+    color: #8a5b58;
+    position: absolute;
+    width: 50px;
+    height: 40px;
+    right: 0;
+    top: 0;
+    outline : none;
+    z-index: 8;
+}
+
+.search-box input[type="submit"]:hover {
+    color: #d06f56;
+}
+
+/* PC用検索ボックス */
+.search-box--pc {
+    position: relative;
+    left: -1%;
+    width: 240px;
+    margin: 10px auto;
+}
+
+/* margin-topを入れて、メニューの下にもぐりこまないように */
+.header-hero {
+    position: relative;
+    max-width: 100%;
+    margin-top: 130px;
+    padding:0;
+}
+
+/* デバイス幅640px以上のときにmargin-top変更 */
+@media (min-width:640px) {
+    .header-hero  {
+        margin-top: 174px;
+    }
+}
+
+
+/* フッター */
+/* ジャンルでさがす */
+.genre-list {
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* デバイス幅640px以上のときは横ならび */
+@media (min-width:640px) {
+    .genre-list {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+/* ジャンルのリスト */
+.genre-menu {
+    position: relative;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 50px;
+    background: #fdfbf5;
+    border: 1px solid #8a5b58;
+}
+
+/* デバイス幅640px以上のときは幅変更*/
+@media (min-width:640px) {
+    .genre-menu {
+        width: 32.5%;
+        font-size: 12px;
+    }
+
+    .genre-menu li:nth-child(3n+1) {
+        margin-left: 0;
+    }
+}
+
+/* デバイス幅767px以上のときはフォントサイズ変更*/
+@media (min-width:767px) {
+    .genre-menu {
+        font-size: 14px;
+    }
+}
+
+/* hover設定 */
+.genre-menu a:hover {
+    background: #dcaf6e;
+    opacity: 0.3;
+}
+
+/* ジャンルアイコン */
+.genre-menu img {
+    width: 44px;
+    height: 44px;
+    padding: 3px;
+}
+
+/* ジャンル名 */
+.genre-menu p {
+    justify-self: flex-start;
+    margin-left: 5px;
+    color: #8a5b58;
+}
+
+/* 三角 */
+.genre-menu span {
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 10px;
+    border-style: solid;
+    border-width: 4px 0 4px 8px;
+    border-color: transparent transparent transparent #d06e56;
+}
+
+/* フッターメニュー*/
+.footer-menu {
+    flex-direction: column;
+}
+
+.footer-menu li {
+    margin-bottom: 20px;
+}
+
+/* デバイス幅640px以上のときは横ならび */
+@media (min-width:640px) {
+    .footer-menu {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .footer-menu li + li {
+        margin-left: 30px;
+    }
+
+}
+
+/* SNSアイコン */
+.sns-link {
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.sns-link img {
+    width: 50px;
+    height: 50px;
+}
+
+.sns-link li + li {
+    margin-left: 10px;
+}
+
+/* コピーライト */
+.footer-copyright {
+    width: 100%;
+    padding: 18px 0;
+    background: #8a5b58;
+    color: #fdfbf5;
+    font-size: 12px;
+}
+
+/* flex */
+.flex {
+    display: flex;
+}
+
+/* 必須 */
+.must {
+    margin-left: 10px;
+    padding: 2px;
+    font-size: 14px;
+    font-weight: normal;
+    color: #d06f56;
+}
+

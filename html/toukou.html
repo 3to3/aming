@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="おうち時間,ハンドメイド,作品,投稿,編み物,手編み,棒針,かぎ針,初心者,編み図,レシピ">
+    <meta name="description"
+        content="あみんぐは、編み物作品投稿サイトです。「棒針」「かぎ針」どちらの作品も見ることができます。編み物が好きならどなたでも大歓迎！簡単な作品レシピの紹介や、編み方の動画も準備しています。">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <title>投稿する</title>
+    <!-- stylesheet -->
+    <link href="../css/reset.css" rel="stylesheet" media="all">
+    <link href="../css/base.css" rel="stylesheet" media="all">
+    <link href="../css/menu.css" rel="stylesheet" media="all">
+    <link href="../css/mypage.css" rel="stylesheet" media="all">
+    <link href="../css/toukou.css" rel="stylesheet" media="all">
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+    <!-- icon -->
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="icon" sizes="192x192" href="../img/aming.svg">
+    <link rel="apple-touch-icon" href="../img/aming.svg">
+
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header">
+            <div class="header-inner">
+                <div class="header-logo-link flex">
+                    <h1><a href="../index.html"><img src="../img/amilogo-w.svg" alt="あみんぐ"></a></h1>
+                    <!-- ハンバーガーメニュー -->
+                    <a href="#" class="btn-ham-mp mb"><span class="btn-ham-s">メニュー</span></a>
+                    <nav class="mp-menu--mb mb">
+                        <div class="user-menu flex">
+                            <img src="../user/usa.png">
+                            <div class="to-mp flex">
+                                <p>うさぎ</p>
+                                <span>マイページトップ</span>
+                            </div>
+                            <a href="usagi.html"></a>
+                        </div>
+                        <a href="#" class="btn-gallery--menu">ギャラリーを見る</a>
+                        <ul>
+                            <li><a href="toukou.html">投稿する</a></li>
+                            <li><a href="#">作品一覧・管理</a></li>
+                            <li><a href="#">お気に入り</a></li>
+                            <li><a href="#">設定</a></li>
+                            <li><a href="#">ヘルプ・マニュアル</a></li>
+                            <li><a href="#">ログアウト</a></li>
+                            <li><a href="../index.html">トップにもどる</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+        <div class="container">
+            <!-- PC用メニュー -->
+            <nav class="mp-menu--pc pc">
+                <div class="user-menu flex">
+                    <img src="../user/usa.png">
+                    <div class="to-mp flex">
+                        <p>うさぎ</p>
+                        <span>マイページトップ</span>
+                    </div>
+                    <a href="usagi.html"></a>
+                </div>
+                <a href="#" class="btn-gallery--menu">ギャラリーを見る</a>
+                <ul>
+                    <li><a href="toukou.html">投稿する</a></li>
+                    <li><a href="#">作品一覧・管理</a></li>
+                    <li><a href="#">お気に入り</a></li>
+                    <li><a href="#">設定</a></li>
+                    <li><a href="#">ヘルプ・マニュアル</a></li>
+                    <li><a href="#">ログアウト</a></li>
+                    <li><a href="../index.html">トップにもどる</a></li>
+                </ul>
+            </nav>
+            <!-- PC用メニュー end -->
+            <main class="main contents mp-pc genmai">
+                <section class="main-toukou">
+                    <h2 class="heading">投稿する</h2>
+                    <form id="sakuhin-form" class="sakuhin-form" action="#" method="POST">
+                        <!-- 作品写真 -->
+                        <h3>作品写真<span class="must">必須</span></h3>
+                        <div class="img-upload-wrapper">
+                            <input type="file" name="sakuhin-img" id="input-img" accept="image/*" required>
+                            <div id="preview-area">
+                                <div id="preview-img"></div>
+                            </div>
+                            <div id="drop-area"><span class="drop-text">画像をドラッグ＆ドロップまたはファイルを選択</span></div>
+                            <div class="btn-clear"><i class="fas fa-times-circle"></i></div>
+                        </div>
+                        <p><span>※アップロードした画像は、右上の<i class="fas fa-times-circle"></i>ボタンでリセットできます。</span></p>
+                        <!-- 作品情報 -->
+                        <h3>作品情報</h3>
+                        <p>作品名<small>(100文字まで)</small><span class="must">必須</span></p>
+                        <input type="text" name="sakuhinmei" required>
+                        <p>編み方<small>(どちらかひとつ)</small><span class="must">必須</span></p>
+                        <div class="radio flex">
+                            <input type="radio" name="giho" id="bou" value="棒針" checked required><label for="bou"
+                                class="radio--label">棒針</label>
+                            <input type="radio" name="giho" id="kagi" value="かぎ針" required><label for="kagi"
+                                class="radio--label">かぎ針</label>
+                        </div>
+                        <p>ジャンル<span class="must">必須</span></p>
+                        <select name="genre" class="select-genre" required>
+                            <option value="0" selected disabled>選択してください</option>
+                            <option value="1">ウェア</option>
+                            <option value="2">帽子</option>
+                            <option value="3">マフラー・ストール</option>
+                            <option value="4">手袋・アームウォーマー</option>
+                            <option value="5">靴下・レッグウォーマー</option>
+                            <option value="6">バッグ・ポーチ</option>
+                            <option value="7">その他</option>
+                        </select>
+                        <p><span>↓初心者向けの作品の場合は、こちらにチェックを入れてください。</span></p>
+                        <div class="check-beginner">
+                            <label>
+                                <input type="checkbox" class="btn-check">
+                                初心者向け
+                            </label>
+                        </div>
+                        <p>作品コメント<small>(2000文字まで)</small></p>
+                        <textarea name="sakuhincomme" rows="10" cols="40"></textarea>
+                        <p>キーワード<span>(0/5個)</span></p>
+                        <input type="text" name="keywords">
+                        <p><span class="hover">※キーワード登録の詳細は<a href="#">こちら</a></span></p>
+                        <p>公開設定</p>
+                        <div class="btn-switch onoff">
+                            <input type="checkbox" class="checkbox">
+                            <div class="knobs">
+                                <span>公開する</span>
+                            </div>
+                            <div class="layer"></div>
+                        </div>
+                        <div class="btn-form">
+                            <input type="submit" value="この内容で登録・更新する" class="btn-sub">
+                        </div>
+
+                    </form>
+                </section>
+            </main>
+        </div>
+        <!-- main end -->
+        <footer class="footer">
+            <div class="footer-share">
+                <h3 class="check">フォローミー！</h3>
+                <ul class="sns-link flex">
+                    <li><a href="#"><img src="../img/ico/fb.png"></a></li>
+                    <li><a href="#"><img src="../img/ico/twi.png"></a></li>
+                </ul>
+            </div>
+            <ul class="footer-menu flex hover">
+                <li><a href="#">プライバシーポリシー</a></li>
+                <li><a href="#">利用規約</a></li>
+                <li><a href="#">あみんぐとは</a></li>
+                <li><a href="#">お問い合わせ</a></li>
+            </ul>
+            <p class="footer-copyright">Copyright © あみんぐ All Rights Reserved.</p>
+        </footer>
+        <!-- footer end -->
+        <!-- TOPへもどるボタン -->
+        <div id="btn-top"><a href="#"></a></div>
+    </div>
+    <!-- jQuery -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="../js/menu.js"></script>
+</body>
+
+</html>

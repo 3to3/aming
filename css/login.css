@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+/* ログイン画面 */
+.main-login {
+    max-width: 100%;
+    margin-top: 160px;
+    padding:0;
+}
+
+.login-form {
+    position: relative;
+    max-width: 100%;
+    background: #fdfbf5;
+    padding: 0;
+    margin: 0 auto;
+    margin-bottom: 36px;
+    text-align: left;
+}
+
+/* デバイス幅640px以上のとき */
+@media (min-width: 640px){
+.login-form {max-width: 70%;}
+}
+
+.login-form p {
+    padding: 5px;
+    font-size: 16px;
+}
+
+.login-form span {
+    font-size: 14px;
+    margin-left: 14px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    border-radius: 8px;
+    background: #fdfbf5;
+    color: #8a5b58;
+    border: 1px solid #8a5b58;
+    font-size: 14px;
+}
+.login-form input[type="email"]:focus,
+.login-form input[type="password"]:focus {
+    outline: none;
+    background: #f4e7c7;
+    border: 2px solid #d06f56;
+    font-weight: bold
+}
+
+/* ログインボタン */
+.btn-form {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.btn-form input {
+    width: 70%;
+    margin: 0 auto;
+    padding: 10px;
+    line-height: 30px;
+    background: #d06f56;
+    border: 1px solid #d06f56;
+    color: #fdfbf5;
+    font-size: 14px;
+    -webkit-appearance: none;
+}
+
+.btn-form input:focus {
+    outline: none;
+}
+
+/* ログインボタンの下のテキスト */
+.if-list {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+}
+

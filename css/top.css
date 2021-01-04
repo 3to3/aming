@@ -1,0 +1,327 @@
+@charset "UTF-8";
+
+/* ヒーローイメージ画像サイズ */
+.hero-img {
+    width: 300px;
+    height: 300px;
+}
+
+/* デバイス幅640px以上のときに画像サイズを変更 */
+@media (min-width:640px) {
+    .hero-img {
+        width: 600px;
+        height: 600px;
+    }
+}
+
+/* キャッチコピー */
+.catch-copy {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: baseline;
+    -ms-writing-mode: tb-rl;
+    writing-mode: vertical-rl;
+    font-size: 14px;
+}
+
+/* デバイス幅640px以上のときにフォントサイズを変更 */
+@media (min-width:640px) {
+    .catch-copy {
+        top: 10%;
+        right: 12%;
+        font-size: 20px;
+    }
+}
+
+/* みんなの作品 */
+/* 作品カード */
+.sakuhin {
+    position: relative;
+    width:196px;
+    height:315px;
+    margin-bottom: 30px;
+    border:solid 1px #8a5b58;
+    border-radius:8px;
+    font-size:14px;
+    background: #fdfbf5;
+    color:#8a5b58;
+    z-index: 31
+}
+
+/* リンク設定 */
+.sakuhin a,
+.column a,
+.column-mp a,
+.genre-menu a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-indent:-999px;
+    z-index: 32;
+}
+
+.sakuhin a:focus {
+    outline: none;
+}
+
+/* 作品写真 */
+.sakuhin-img {
+    display: block;
+    width:100%;
+    height:178px;
+    border-radius: 8px 8px 0 0;
+}
+
+/* 作品情報 */
+.sakuhin-item {
+    width:100％;
+    height:119px;
+    margin:8px;
+    border-radius: 0 0 8px 8px;
+}
+
+/* 作品コメント */
+.sakuhin-text {
+    width:100%;
+    height:63px;
+    margin-bottom:8px;
+    text-align: left;
+}
+
+/* 作者情報 */
+.sakuhin-sakusha {
+    position: relative;
+    width:100%;
+    height:34px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* 作者アイコン */
+.sakuhin-sakusha img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:32px;
+    height:32px;
+    background: #f4e7c7;
+    border:1px solid #8a5b58;
+    border-radius:50%;
+    z-index: 35;
+}
+
+.sakuhin-sakusha a.to-sg {
+    position: relative;
+    display: block;
+    width: 32px;
+    height: 32px;
+    z-index: 36;
+}
+
+/* 作者名 */
+.sakuhin-sakusha p {
+    width:130px;
+    height:100%;
+    text-align: left;
+    margin: 10px 0 0 10px;
+}
+
+/* コラム */
+.column-list {
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 14px;
+}
+
+/* デバイス幅640px以上のときは横ならび */
+@media (min-width:640px) {
+    .column-list {
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+}
+
+/* コラム記事 */
+.column {
+    position: relative;
+    width: 100%;
+    height:120px;
+    margin-bottom: 16px;
+    border:solid 1px #8a5b58;
+    border-radius:8px;
+    font-size:14px;
+    background: #fdfbf5;
+    color:#8a5b58;
+}
+
+/* デバイス幅640px以上のときはwidth変更 */ 
+@media (min-width:640px) {
+    .column {
+        width: 48%;
+    }
+}
+
+/* hover設定 */
+.column a:hover {
+    background: #dcaf6e;
+    opacity: 0.3;
+}
+
+/* コラム写真 */
+.column-img {
+    display: block;
+    width:120px;
+    height:100%;
+    border-radius: 8px 0 0 8px;
+}
+
+/* コラム情報 */
+.column-item {
+    width: auto;
+    height:104px;
+    padding:8px;
+    border-radius: 0 8px 8px 0;
+}
+
+/* コラムテキスト */
+.column-text {
+    text-align: left;
+    width:100%;
+    height:60%;
+    margin-bottom:8px;
+}
+
+/* コラムカテゴリー */
+.column-category {
+    max-width: 90px;
+    height: 20px;
+    margin-bottom: 0;
+    padding: 4px 10px;
+    border-radius:10px;
+    background: #8a5b58;
+    color: #fdfbf5;
+    font-size: 14px;
+}
+
+/* slick-slider全体の設定 */
+.slick-slider
+{
+    width: 100%;
+    position: relative;
+    margin: 0 auto 30px;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* slider-listの設定 */
+.slick-list {
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin:0 -20px; 
+    padding: 0;
+}
+
+/* slick-slider・slider-listの */
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+/* .slick-slide設定(ロードすぐは非表示) */
+.slick-slide{
+    display: none;
+    float: left;
+    height: 100%;
+    margin: 0 10px 30px;
+    min-height: 1px;
+}
+
+/* slick-initializedクラスが付与されたら表示する */
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+
+/* slick-dots設定 */
+.slick-dots {
+    position: absolute;
+    bottom: -50px;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%; 
+}
+
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    height: 20px; 
+    width: 20px;
+    margin: 0 10px;
+    margin-bottom: 30px;
+    padding: 0;
+    cursor: pointer; 
+    z-index: 999;
+}
+
+
+/* デフォルトで入っている数字を消す */
+.slick-dots li button {
+    border: 0;
+    display: block; 
+    height: 30px; 
+    width: 30px; 
+    line-height: 0px; 
+    font-size: 0px; 
+}
+
+/* 数字のかわりに・を入れる */
+.slick-dots li button::before {  
+    position: absolute;
+    top: 0;
+    left: 0; 
+    content: "•";
+    width: 30px;
+    height: 30px;
+    font-size: 28px;
+    text-align: center;
+    color: #8a5b58;
+    opacity: 0.5;
+}
+
+/* hover時にslick-dotsの不透明度があがる */
+.slick-dots li button:hover::before {
+    color: #8a5b58;
+    opacity: 1;
+}
+
+/* slick-activeクラスが付与されているdotsの不透明度があがる */
+.slick-dots li.slick-active button::before{
+    color: #8a5b58;
+    opacity: 1;
+}
