@@ -1,0 +1,116 @@
+/* slick-slider全体の設定 */
+.slick-slider
+{
+    width: 100%;
+    position: relative;
+    margin: 0 auto 30px;
+
+    display: block;
+    box-sizing: border-box;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* slider-listの設定 */
+.slick-list {
+    position: relative;
+
+    display: block;
+    overflow: hidden;
+
+    margin:0 -20px; 
+    padding: 0;
+}
+
+/* slick-slider・slider-listの */
+.slick-slider .slick-list {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+
+/* .slick-slide設定(ロードすぐは非表示) */
+.slick-slide{
+    display: none;
+    float: left;
+    height: 100%;
+    margin: 0 10px 30px;
+    min-height: 1px;
+}
+
+/* slick-initializedクラスが付与されたら表示する */
+.slick-initialized .slick-slide
+{
+    display: block;
+}
+
+/* slick-dots設定 */
+.slick-dots {
+    position: absolute;
+    bottom: -50px;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%; 
+}
+
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    height: 20px; 
+    width: 20px;
+    margin: 0 10px;
+    margin-bottom: 30px;
+    padding: 0;
+    cursor: pointer; 
+    z-index: 999;
+}
+
+
+/* デフォルトで入っている数字を消す */
+.slick-dots li button {
+    border: 0;
+    display: block; 
+    height: 30px; 
+    width: 30px; 
+    line-height: 0px; 
+    font-size: 0px; 
+}
+
+/* 数字のかわりに・を入れる */
+.slick-dots li button::before {  
+    position: absolute;
+    top: 0;
+    left: 0; 
+    content: "•";
+    width: 30px;
+    height: 30px;
+    font-size: 28px;
+    text-align: center;
+    color: #8a5b58;
+    opacity: 0.5;
+}
+
+/* hover時にslick-dotsの不透明度があがる */
+.slick-dots li button:hover::before {
+    color: #8a5b58;
+    opacity: 1;
+}
+
+/* slick-activeクラスが付与されているdotsの不透明度があがる */
+.slick-dots li.slick-active button::before{
+    color: #8a5b58;
+    opacity: 1;
+}
